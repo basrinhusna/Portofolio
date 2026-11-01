@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portofolio dan CV Basrin — pengalaman layanan keuangan, pengembangan nasabah, jaringan komputer, dan fiber optik.">
+  <meta name="theme-color" content="#101827">
+  <title>Basrin | CV & Portofolio Profesional</title>
+  <style>
+    :root {
+      --bg:#0b1120; --panel:#121c2e; --panel2:#17243a; --text:#edf4ff;
+      --muted:#a8b6ca; --accent:#ff8a24; --accent2:#ffbd69;
+      --line:rgba(255,255,255,.13); --max:1080px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 90% 0%,#1b2c45 0,transparent 28%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max),92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(11,17,32,.91);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{min-height:68px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+    .brand{font-weight:900;letter-spacing:.6px}.brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:19px;color:var(--muted);font-size:.92rem}.navlinks a:hover{color:var(--accent2)}
+    .hero{display:grid;grid-template-columns:1.35fr .65fr;align-items:center;gap:42px;padding:76px 0 64px}
+    .eyebrow{color:var(--accent2);text-transform:uppercase;letter-spacing:2px;font-weight:800;font-size:.78rem}
+    h1{font-size:clamp(2.6rem,6vw,4.5rem);line-height:1.08;letter-spacing:-2px;margin:13px 0 18px}
+    h1 span{color:var(--accent)}
+    .lead{font-size:1.08rem;color:var(--muted);max-width:660px}
+    .actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:24px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;padding:10px 16px;border-radius:10px;border:1px solid var(--line);font-weight:750}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#201307}
+    .btn:hover{transform:translateY(-2px);transition:.2s}
+    .profile-card{border:1px solid var(--line);border-radius:22px;padding:26px;background:linear-gradient(145deg,#1b2b43,#111a2a);box-shadow:0 25px 70px #0003}
+    .avatar {
+    width: 100px;
+    height: 150px;
+    border-radius: 20px;
+    border: 1px solid #ff8a2445;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    padding: 0;
+    margin-bottom: 10px;
+    background: #17243a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+    .profile-card h2{margin:0 0 4px}.profile-card p{margin:0;color:var(--muted)}
+    .quickfacts{display:grid;gap:10px;margin-top:20px}.fact{border-top:1px solid var(--line);padding-top:9px;color:var(--muted);font-size:.92rem}.fact strong{color:var(--text)}
+    section{padding:54px 0}
+    .section-head{margin-bottom:25px}.section-head h2{font-size:clamp(1.8rem,4vw,2.45rem);line-height:1.2;margin:7px 0 10px}.section-head p{color:var(--muted);max-width:740px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .card{background:var(--panel);border:1px solid var(--line);padding:21px;border-radius:16px}
+    .card h3{margin:7px 0}.card p,.card li{color:var(--muted);font-size:.95rem}
+    .card ul{padding-left:19px;margin-bottom:0}
+    .icon{font-size:1.55rem}
+    .timeline{border-left:2px solid #ff8a2480;padding-left:23px;margin-left:5px}
+    .item{position:relative;margin:0 0 25px}.item:before{content:"";position:absolute;left:-30px;top:10px;width:11px;height:11px;border-radius:50%;background:var(--accent)}
+    .item h3{margin:0 0 3px}.item .meta{color:var(--accent2);font-size:.88rem;font-weight:700}.item p{color:var(--muted);margin:5px 0}
+    .taglist{display:flex;flex-wrap:wrap;gap:8px}.tag{padding:5px 10px;border:1px solid var(--line);border-radius:999px;color:#dce8fa;font-size:.85rem}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+    .project{background:linear-gradient(135deg,var(--panel),#101827);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    .project-banner{min-height:112px;display:grid;place-items:center;background:linear-gradient(135deg,#1c3049,#25364a);color:var(--accent2);font-size:1.4rem;font-weight:800;text-align:center;padding:16px}
+    .project-body{padding:20px}.project-body h3{margin:0 0 7px}.project-body p{color:var(--muted);margin:0 0 12px}
+    .note{padding:14px 17px;border:1px dashed #ffbd6960;border-radius:12px;color:var(--muted);font-size:.9rem;margin-top:18px}
+    .contact{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:28px;border-radius:20px;background:linear-gradient(110deg,#26364a,#17243a);border:1px solid var(--line)}
+    .contact h2{margin:0 0 7px}.contact p{margin:0;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:.88rem}
+    .footrow{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:780px){.hero{grid-template-columns:1fr;padding-top:52px;gap:24px}.grid{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr}.contact{flex-direction:column;align-items:flex-start}.navlinks{gap:10px;font-size:.82rem}}
+    @media(max-width:520px){.grid{grid-template-columns:1fr}.navlinks a:nth-child(2),.navlinks a:nth-child(3){display:none}h1{letter-spacing:-1px}section{padding:42px 0}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap" aria-label="Navigasi utama">
+    <a class="brand" href="#beranda">BASRIN<span>.</span></a>
+    <div class="navlinks">
+      <a href="#tentang">Tentang</a><a href="#pengalaman">Pengalaman</a>
+      <a href="#keahlian">Keahlian</a><a href="#kontak">Kontak</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero wrap" id="beranda">
+    <div>
+      <div class="eyebrow">Curriculum Vitae · Portofolio</div>
+      <h1>Halo, saya <span>Basrin.</span></h1>
+      <p class="lead">Profesional yang berpengalaman dalam pengembangan nasabah dan layanan keuangan, sekaligus terus mengembangkan kompetensi teknis di bidang jaringan komputer dan fiber optik. Saya mengutamakan komunikasi yang baik, pelayanan, ketelitian, dan kemauan untuk terus belajar.</p>
+      <div class="actions">
+        <a class="btn primary" href="#pengalaman">Lihat Pengalaman</a>
+        <a class="btn" href="#kontak">Hubungi Saya</a>
+      </div>
+    </div>
+    <aside class="profile-card">
+      <img
+      class="avatar"
+      src="Basrin.jpeg"
+      alt="Foto Profil Basrin"
+>
+      <h2>Basrin</h2>
+      <p>Financial Consultant · Network &amp; Fiber Optic Learner</p>
+      <div class="quickfacts">
+        <div class="fact"><strong>Domisili</strong><br>Bajarmasin, Kalimantan Selatan</div>
+        <div class="fact"><strong>Pendidikan</strong><br>SMA</div>
+        <div class="fact"><strong>Pengembangan teknis</strong><br>Pelatihan Elektronika Fiber Optik — BBPVP Bekasi</div>
+      </div>
+    </aside>
+  </section>
+
+  <section id="tentang">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Tentang Diri Saya</div><h2>Profil singkat</h2>
+        <p>Saya memiliki pengalaman dalam bidang pemasaran dan layanan asuransi, membangun hubungan dengan nasabah, serta mengembangkan jaringan relasi. Di luar pengalaman tersebut, saya memiliki minat kuat pada teknologi jaringan internet, fiber optik, perancangan topologi, dan perangkat MikroTik. Saya terbiasa belajar secara mandiri, terbuka terhadap masukan, dan berusaha menyelesaikan pekerjaan secara terstruktur.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">🤝</div><h3>Hubungan &amp; Pelayanan</h3><p>Membangun komunikasi dengan nasabah, memahami kebutuhan, dan menjaga hubungan jangka panjang.</p></article>
+        <article class="card"><div class="icon">📈</div><h3>Orientasi Target</h3><p>Berpengalaman mencari prospek, melakukan tindak lanjut, dan mengembangkan peluang secara mandiri.</p></article>
+        <article class="card"><div class="icon">🛠️</div><h3>Teknologi &amp; Pembelajaran</h3><p>Mengembangkan kemampuan teknis melalui pelatihan, latihan konfigurasi, dan dokumentasi proyek jaringan.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pengalaman">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Riwayat Profesional</div><h2>Pengalaman kerja</h2><p>Informasi di bawah dirangkum dari data yang Anda sampaikan. Lengkapi bulan/tahun dan nama jabatan resmi bila diperlukan.</p></div>
+      <div class="timeline">
+        <div class="item">
+          <div class="meta">Zurich Indonesia · sekitar 2 tahun</div>
+          <h3>Financial Consultant / Agen Asuransi</h3>
+          <p>Melakukan pengembangan nasabah, menjelaskan produk dan manfaat sesuai kebutuhan calon nasabah, membangun relasi, serta menindaklanjuti prospek.</p>
+        </div>
+        <div class="item">
+          <div class="meta">Allianz · sekitar 4 tahun</div>
+          <h3>Financial Consultant / Agen Asuransi</h3>
+          <p>Berpengalaman dalam pemasaran asuransi, menjaga hubungan dengan nasabah, dan melakukan pengembangan prospek secara mandiri.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pendidikan">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Pendidikan &amp; Pelatihan</div><h2>Latar belakang pembelajaran</h2></div>
+      <div class="grid">
+        <article class="card"><div class="icon">🎓</div><h3>Pendidikan Formal</h3><p>SMA NEGERI 1 Permata Intan, Murung Raya Kalimantan Tengah</p></article>
+        <article class="card"><div class="icon">🧵</div><h3>Elektronika Fiber Optik</h3><p>Pelatihan di BBPVP Bekasi.</p></article>
+        <article class="card"><div class="icon">🌐</div><h3>Pembelajaran Mandiri</h3><p>Topologi FTTH, pembagian core fiber optik, perangkat jaringan, dasar IP, dan konfigurasi MikroTik.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="keahlian">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Kompetensi</div><h2>Keahlian dan kemampuan</h2></div>
+      <div class="grid">
+        <article class="card"><h3>Penjualan &amp; Layanan</h3><ul><li>Komunikasi dan presentasi produk</li><li>Pengembangan prospek dan nasabah</li><li>Menjaga relasi dan tindak lanjut</li><li>Orientasi target</li></ul></article>
+        <article class="card"><h3>Jaringan &amp; Fiber Optik</h3><ul><li>Dasar kabel dan warna core</li><li>Pengenalan POP, ODC, ODP, CTO</li><li>Perencanaan jalur FTTH</li><li>Dokumentasi topologi jaringan</li></ul></article>
+        <article class="card"><h3>Perangkat &amp; Tools</h3><ul><li>Dasar MikroTik dan IP network</li><li>Konsep PPPoE, DHCP, DNS</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="wrap">
+      <div class="contact">
+        <div><div class="eyebrow">Kontak</div><h2>Mari terhubung</h2><p>Terbuka untuk peluang kerja, kolaborasi, dan diskusi di bidang layanan keuangan maupun jaringan.</p></div>
+        <div class="actions">
+        <a class="btn primary"
+          href="https://wa.me/6285111333778"
+          target="_blank"
+          rel="noopener noreferrer">
+          WhatsApp
+        </a>
+          <a class="btn" href="mailto:basrinnet@gmail.com">Kirim Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footrow"><span>© <span id="year"></span> Basrin · CV &amp; Portofolio</span></div></footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
